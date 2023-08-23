@@ -14,7 +14,7 @@ const Logout = () => {
   }, [jwt]);
 
   return (
-    <div className="bg-pink-600 w-screen min-h-screen flex flex-col justify-center items-center">
+    <div className="bg-pink-500 w-screen min-h-screen flex flex-col justify-center items-center">
       <h4 className="text-white text-2xl font-bold">
         You have successfully logged out!
       </h4>

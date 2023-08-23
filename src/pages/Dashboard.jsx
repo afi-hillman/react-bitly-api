@@ -32,17 +32,17 @@ const Dashboard = () => {
   };
   return (
     <div>
-      <div className="w-screen min-h-screen bg-pink-600 flex flex-col justify-center items-center">
+      <div className="w-screen min-h-screen bg-orange-500 flex flex-col justify-center items-center">
         <h4 className="text-white text-2xl font-bold">Logged in!</h4>
         <Link
-          className="text-white hover:underline border px-4 py-2 hover:bg-pink-400 mb-4 mt-4"
+          className="text-white hover:underline border px-4 py-2 hover:bg-orange-400 mb-4 mt-4"
           to="/"
         >
           Return to home
         </Link>
         <button
           onClick={logoutFunction}
-          className="text-white hover:underline border px-4 py-2 hover:bg-pink-400"
+          className="text-white hover:underline border px-4 py-2 hover:bg-orange-400"
         >
           Click here to logout
         </button>
