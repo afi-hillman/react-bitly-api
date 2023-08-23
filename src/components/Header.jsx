@@ -9,7 +9,7 @@ const Header = () => {
         <div>home</div>
         <div>my links</div>
         <Link
-          className="text-black hover:underline border border-orange-500 px-4 rounded-md bg-white"
+          className="text-black hover:underline border border-pink-500 px-4 rounded-md bg-white"
           to="/login"
         >
           login

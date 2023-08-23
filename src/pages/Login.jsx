@@ -39,7 +39,7 @@ const Login = () => {
     }
   };
   return (
-    <div className="w-screen min-h-screen flex flex-col justify-center items-center bg-orange-500">
+    <div className="w-screen min-h-screen flex flex-col justify-center items-center bg-pink-500">
       <h1 className="text-white font-bold text-7xl py-6">bit.ly</h1>
       {loginState !== "success" && (
         <div className="bg-white max-w-[800px] p-4 space-y-2 rounded-md">
@@ -73,12 +73,12 @@ const Login = () => {
             </div>
             <button
               disabled={loginState === "loading"}
-              className="w-full disabled:bg-gray-400 bg-orange-500 text-white text-center p-3 rounded mt-2"
+              className="w-full disabled:bg-gray-400 bg-pink-500 text-white text-center p-3 rounded mt-2"
             >
               {loginState === "loading" ? "Logging in..." : "Login"}
             </button>
             <Link
-              className="block text-center text-orange-500 underline"
+              className="block text-center text-pink-500 underline"
               to="/register"
             >
               Don't have an account?
