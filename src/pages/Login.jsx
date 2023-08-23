@@ -13,13 +13,13 @@ const Login = () => {
     formState: { errors },
   } = useForm();
   const [loginState, setLoginState] = useState("pending");
-  const { jwt, setJwt } = useContext(AuthContext);
+  const { jwtCookie, setJwtCookie } = useContext(AuthContext);
   const navigate = useNavigate();
   useEffect(() => {
-    if (jwt) {
+    if (jwtCookie) {
       navigate("/dashboard");
     }
-  }, [jwt]);
+  }, [jwtCookie]);
   const onSubmit = async (data) => {
     try {
       setLoginState("loading");
@@ -29,7 +29,7 @@ const Login = () => {
       });
       console.log(user.message);
       setLoginState("success");
-      setJwt(user.jwt);
+      setJwtCookie(user.jwt);
     } catch (error) {
       setLoginState("error");
       const serverErrors = error?.response?.data || [];
