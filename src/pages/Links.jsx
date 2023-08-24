@@ -114,7 +114,8 @@ const Links = () => {
         link: data.link,
       });
       setCreateState("success");
-      showModal(false);
+      fetchLinks();
+      handleModalClose();
     } catch (error) {
       const serverErrors = error?.response?.data?.data?.errors || [];
       setCreateState("error");
