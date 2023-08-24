@@ -9,6 +9,10 @@ import {
 import { AuthContext } from "../App";
 import Modal, { ModalHeader } from "../components/Modal";
 import { useForm } from "react-hook-form";
+import editIcon from "../assets/file-edit.svg";
+import trashIcon from "../assets/trash-2.svg";
+import copyIcon from "../assets/copy.svg";
+import copyCheckIcon from "../assets/copy-check.svg";
 
 const BASE_URL = import.meta.env.VITE_API_URL;
 
@@ -110,6 +114,7 @@ const Links = () => {
         link: data.link,
       });
       setCreateState("success");
+      showModal(false);
     } catch (error) {
       const serverErrors = error?.response?.data?.data?.errors || [];
       setCreateState("error");
@@ -214,12 +219,9 @@ const Links = () => {
                     }
                   >
                     {copied === index ? (
-                      <img
-                        src="src\assets\copy-check.svg"
-                        alt="copy check icon"
-                      />
+                      <img src={copyCheckIcon} alt="copy check icon" />
                     ) : (
-                      <img src="src\assets\copy.svg" alt="copy icon" />
+                      <img src={copyIcon} alt="copy icon" />
                     )}
                   </button>
                 </td>
@@ -239,7 +241,7 @@ const Links = () => {
                       onClick={() => {
                         linkDeletion(column.slug);
                       }}
-                      src="src\assets\trash-2.svg"
+                      src={trashIcon}
                       alt="trash icon"
                       className="rounded-md hover:bg-gray-200 transition-all cursor-pointer"
                     />
@@ -247,7 +249,7 @@ const Links = () => {
                       onClick={() => {
                         handleEditModalOpen(column.slug);
                       }}
-                      src="src\assets\file-edit.svg"
+                      src={editIcon}
                       alt="edit icon"
                       className="rounded-md hover:bg-gray-200 transition-all cursor-pointer"
                     />
